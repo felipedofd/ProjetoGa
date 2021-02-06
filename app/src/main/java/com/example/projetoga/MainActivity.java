@@ -39,16 +39,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                service.getUserStatsForGame(pid.getText().toString(), "AE2DC846D2E477E97A841CED5E0ED908", id.getText().toString()).enqueue(new Callback<ResponseSteam>() {
+                service.getFriendList("friend", "AE2DC846D2E477E97A841CED5E0ED908", "76561198060505954").enqueue(new Callback<ResponseSteam2>() {
                     @Override
-                    public void onResponse(Call<ResponseSteam> call, Response<ResponseSteam> response) {
-                        kills.setText("Quantidade de jogadores abatidos: " + response.body().playerStats.stats.get(0).getValue());
-                        deaths.setText("Quantidades de Mortes: " + response.body().playerStats.stats.get(1).getValue());
-                        wins.setText("Quantidade de Vitorias: " + response.body().playerStats.stats.get(5).getValue());
+                    public void onResponse(Call<ResponseSteam2> call, Response<ResponseSteam2> response) {
+                        kills.setText("Id igual a: " + response.body().getFriendsList().getFriends().get(0).getSteamId());
+//                        kills.setText("Quantidade de jogadores abatidos: " + response.body().playerStats.stats.get(0).getValue());
+//                        deaths.setText("Quantidades de Mortes: " + response.body().playerStats.stats.get(1).getValue());
+//                        wins.setText("Quantidade de Vitorias: " + response.body().playerStats.stats.get(5).getValue());
                     }
 
                     @Override
-                    public void onFailure(Call<ResponseSteam> call, Throwable t) {
+                    public void onFailure(Call<ResponseSteam2> call, Throwable t) {
                         deaths.setText("Erro");
                         kills.setText("Erro");
                         wins.setText("Erro");

@@ -1,5 +1,7 @@
 package com.example.projetoga;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
@@ -18,4 +20,9 @@ public interface SteamService {
             @Query("relationship") String relationship,
             @Query("key") String key,
             @Query("steamid") String steamid);
+
+    @GET("ISteamUser/GetPlayerSummaries/v0002/")
+    Call<ResponseSteam3> getPlayerSummaries(
+            @Query("key") String key,
+            @Query("steamids") List<String> steamid);
 }

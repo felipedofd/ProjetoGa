@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/id"
         android:hint="id user"
-        ></EditText>
+        />
 
 
     <EditText
@@ -19,17 +19,17 @@
         android:layout_height="wrap_content"
         android:hint="ppid game"
         android:id="@+id/ppid"
-        ></EditText>
+        />
 
     <Button
         android:id="@+id/button"
         android:text="Enviar"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Button>
+        android:layout_height="wrap_content"/>
 
    <TextView
-       android:text="Felipe"
+       tools:text="Vitimas"
        android:textSize="40sp"
        android:id="@+id/total_kills"
        android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
        />
 
     <TextView
-        android:text="Felipe"
+        tools:text="Mortes"
         android:layout_marginTop="20dp"
         android:textSize="40sp"
         android:id="@+id/total_deaths"
@@ -45,12 +45,18 @@
         android:layout_height="wrap_content"
         />
     <TextView
-        android:text="Felipe"
+        tools:text="Vitorias"
         android:layout_marginTop="20dp"
         android:textSize="40sp"
         android:id="@+id/total_wins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_image"
         />
 
 </LinearLayout>
